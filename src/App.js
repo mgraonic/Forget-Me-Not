@@ -6,33 +6,34 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      currentLevel: '',
-      oldLevels: []
+      lastReading: '',
+      allReadings: []
     }
   }
 
-  // grabs snapshot of DB on load
+  // grabs snapshot of firebase DB on load
   // pulls levels out and sets state
   componentDidMount() {
     const levelsRef = firebase.database().ref('levels');
     levelsRef.on('value', (snapshot) => {
+      console.log(new Date(snapshot.val()))
       let moistureLevels = snapshot.val();
-      console.log(moistureLevels);
-
       let levelData = [];
 
-      for (let level in moistureLevels) {
+      for (let item in moistureLevels) {
+console.log(moistureLevels[item].moisture);
         levelData.push({
-          moisture: moistureLevels[level].moisture,
+          moisture: moistureLevels[item].moisture,
         });
       }
 
-
       this.setState({
-        oldLevels: levelData
+        lastReading: levelData[levelData.length - 1],
+        allReadings: levelData
       });
+      console.log(this.state);
     });
-    console.log(this.state);
+// end of firebase listener
   }
   render() {
 
