@@ -17,19 +17,20 @@ class App extends Component {
     const levelsRef = firebase.database().ref('levels');
     levelsRef.on('value', (snapshot) => {
       console.log(new Date(snapshot.val()))
-      let moistureLevels = snapshot.val();
-      let levelData = [];
+      let readings = snapshot.val();
+      let newReadings = [];
 
-      for (let item in moistureLevels) {
-console.log(moistureLevels[item].moisture);
-        levelData.push({
-          moisture: moistureLevels[item].moisture,
+      for (let item in readings) {
+console.log(readings[item].moisture);
+       newReadings.push({
+          moisture: readings[item].moisture,
+          utcTime: readings[item].utc_time
         });
       }
 
       this.setState({
-        lastReading: levelData[levelData.length - 1],
-        allReadings: levelData
+        lastReading:newReadings[newReadings.length - 1],
+        allReadings:newReadings
       });
       console.log(this.state);
     });
