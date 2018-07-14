@@ -65,9 +65,25 @@ class App extends Component {
           yType={'text'}
           interpolate={'cardinal'}
           margin={{top: 0, right: 0, bottom: 30, left: 100}}
-          width={6000}
+          width={600}
           height={600}
-          data={[this.state.allReadings]}
+          data={[
+      [
+        { x: 10, y: 25 },
+        { x: 20, y: 10 },
+        { x: 30, y: 25 },
+        { x: 40, y: 10 },
+        { x: 50, y: 12 },
+        { x: 60, y: 25 }
+      ], [
+        { x: 10, y: 40 },
+        { x: 20, y: 30 },
+        { x: 30, y: 25 },
+        { x: 40, y: 60 },
+        { x: 50, y: 22 },
+        { x: 60, y: 9 }
+      ]
+    ]}
            />
       </div>
     );
