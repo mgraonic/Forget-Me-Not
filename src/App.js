@@ -24,9 +24,9 @@ class App extends Component {
       for (let item in readings) {
         let t = readings[item].utc_time;
         let newt = moment(t, 'YYYY-MM-DD HH:mm:ssZZ').format('DD-MMM-YY')
-       newReadings.push({
-         utcTime: newt,
-         moisture: readings[item].moisture
+        newReadings.push({
+          utcTime: newt,
+          moisture: readings[item].moisture
         });
       }
 
@@ -47,7 +47,9 @@ class App extends Component {
   // DATA CONSTRUCTION
 
   render() {
-    let data = this.state;
+    const d = this.state.allReadings.map((reading) => {
+      return {x: reading.utcTime, y: reading.moisture}
+    })
 
     return (
       <div className="App">
@@ -57,34 +59,37 @@ class App extends Component {
         <p className="Intro">
           View your plant's moisture level live!
         </p>
-        <LineChart
-          axes
-          grid
-          axisLabels={{x: 'Day', y: 'Moisture %'}}
-          xType={'text'}
-          yType={'text'}
-          interpolate={'cardinal'}
-          margin={{top: 0, right: 0, bottom: 30, left: 100}}
-          width={600}
-          height={600}
-          data={[
-      [
-        { x: 10, y: 25 },
-        { x: 20, y: 10 },
-        { x: 30, y: 25 },
-        { x: 40, y: 10 },
-        { x: 50, y: 12 },
-        { x: 60, y: 25 }
-      ], [
-        { x: 10, y: 40 },
-        { x: 20, y: 30 },
-        { x: 30, y: 25 },
-        { x: 40, y: 60 },
-        { x: 50, y: 22 },
-        { x: 60, y: 9 }
-      ]
-    ]}
-           />
+        <div className="linechart">
+          <LineChart
+            className="experiment"
+            axes
+            grid
+            verticalGrid
+            lineColors={['pink', 'cyan']}
+            yDomainRange={[0, 100]}
+            margin={{top: 0, right: 0, bottom: 100, left: 100}}
+            width={500}
+            height={500}
+            interpolate={'cardinal'}
+            data={[
+              [
+                { x: 10, y: 25 },
+                { x: 20, y: 10 },
+                { x: 30, y: 25 },
+                { x: 40, y: 10 },
+                { x: 50, y: 12 },
+                { x: 60, y: 25 }
+              ], [
+                { x: 10, y: 40 },
+                { x: 20, y: 30 },
+                { x: 30, y: 25 },
+                { x: 40, y: 60 },
+                { x: 50, y: 22 },
+                { x: 60, y: 9 }
+              ]
+            ]}
+            />
+        </div>
       </div>
     );
   }
