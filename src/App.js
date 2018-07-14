@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { LineChart } from 'react-easy-chart';
 import './App.css';
 import firebase from './firebase.js';
+import moment from 'moment-timezone';
 
 class App extends Component {
   constructor(){
@@ -10,21 +12,21 @@ class App extends Component {
       allReadings: []
     }
   }
-
+  // FIREBASE LISTENER
   // grabs snapshot of firebase DB on load
   // pulls levels out and sets state
   componentDidMount() {
     const levelsRef = firebase.database().ref('levels');
     levelsRef.on('value', (snapshot) => {
-      console.log(new Date(snapshot.val()))
       let readings = snapshot.val();
       let newReadings = [];
 
       for (let item in readings) {
-console.log(readings[item].moisture);
+        let t = readings[item].utc_time;
+        let newt = moment(t, 'YYYY-MM-DD HH:mm:ssZZ').format('DD-MMM-YY')
        newReadings.push({
-          moisture: readings[item].moisture,
-          utcTime: readings[item].utc_time
+         utcTime: newt,
+         moisture: readings[item].moisture
         });
       }
 
@@ -32,11 +34,20 @@ console.log(readings[item].moisture);
         lastReading:newReadings[newReadings.length - 1],
         allReadings:newReadings
       });
+
+      let recent = this.state.lastReading.utcTime;
+      console.log(moment(recent, 'YYYY-MM-DD HH:mm:ssZZ').tz('America/Los_Angeles').format('ha z'));
+      console.log(moment(recent, 'YYYY-MM-DD HH:mm:ssZZ').format('DD-MMM-YY'));
+
       console.log(this.state);
     });
-// end of firebase listener
   }
+  // DATES
+
+  // DATA CONSTRUCTION
+
   render() {
+    let data = this.state;
 
     return (
       <div className="App">
@@ -46,6 +57,18 @@ console.log(readings[item].moisture);
         <p className="Intro">
           View your plant's moisture level live!
         </p>
+        <LineChart
+          axes
+          grid
+          axisLabels={{x: 'Day', y: 'Moisture %'}}
+          xType={'text'}
+          yType={'text'}
+          interpolate={'cardinal'}
+          margin={{top: 0, right: 0, bottom: 30, left: 100}}
+          width={6000}
+          height={600}
+          data={[this.state.allReadings]}
+           />
       </div>
     );
   }

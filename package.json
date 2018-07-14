@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ajv": "^6.5.2",
     "firebase": "^5.2.0",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.21",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-easy-chart": "^1.0.0",
     "react-scripts": "1.1.4"
   },
   "scripts": {
