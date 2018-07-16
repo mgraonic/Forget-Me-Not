@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { LineChart } from 'react-easy-chart';
+import { AreaChart } from 'react-easy-chart';
 import './App.css';
 import firebase from './firebase.js';
 import moment from 'moment-timezone';
@@ -60,38 +61,34 @@ class App extends Component {
         <p className="Intro">
           View your plant's moisture level live!
         </p>
+        <label>Moisture</label>
         <div className="linechart">
-          <LineChart
+          <AreaChart
             className="experiment"
-            axisLabels={{x: 'Day', y: 'Moisture %'}}
-            margin={{top: 0, right: 0, bottom: 30, left: 100}}
+            style={{ '.label': { fill: 'black' } }}
             axes
             grid
+            xType={'time'}
             verticalGrid
             lineColors={['pink', 'cyan']}
             yDomainRange={[0, 100]}
-            margin={{top: 0, right: 0, bottom: 100, left: 100}}
-            width={500}
+            width={700}
             height={500}
             interpolate={'cardinal'}
+            xTicks={7}
+            areaColors={['cyan']}
             data={[
               [
-                { x: 10, y: 25 },
-                { x: 20, y: 10 },
-                { x: 30, y: 25 },
-                { x: 40, y: 10 },
-                { x: 50, y: 12 },
-                { x: 60, y: 25 }
-              ], [
-                { x: 10, y: 40 },
-                { x: 20, y: 30 },
-                { x: 30, y: 25 },
-                { x: 40, y: 60 },
-                { x: 50, y: 22 },
-                { x: 60, y: 9 }
+                { x: '16-Jul-18', y: 80 },
+                { x: '17-Jul-18', y: 85 },
+                { x: '18-Jul-18', y: 90 },
+                { x: '19-Jul-18', y: 75 },
+                { x: '20-Jul-18', y: 78 },
+                { x: '21-Jul-18', y: 82 }
               ]
             ]}
             />
+          <div>Day</div>
         </div>
       </div>
     );

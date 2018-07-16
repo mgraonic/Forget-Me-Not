@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  display: grid;
+}
+
+.linechart {
+  display: inline-block;
+  padding: 0;
 }
 
 .App-logo {
@@ -32,9 +38,21 @@
 }
 
 .linechart {
-  padding: 50px;
+  padding: 0px;
 }
 
 svg {
-  padding: 2em;
+  padding: 0.5em;
+}
+
+g .line {
+  stroke: #ffffff;
+}
+
+.x.axis .tick line {
+  stroke: white !important;
+}
+
+.x.axis .tick:last-of-type line {
+  stroke: black !important;
 }
