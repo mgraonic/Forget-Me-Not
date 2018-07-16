@@ -63,6 +63,8 @@ class App extends Component {
         <div className="linechart">
           <LineChart
             className="experiment"
+            axisLabels={{x: 'Day', y: 'Moisture %'}}
+            margin={{top: 0, right: 0, bottom: 30, left: 100}}
             axes
             grid
             verticalGrid
