@@ -58,25 +58,27 @@ class App extends Component {
         <header className="header">
           <h1 className="title">Forget Me Not</h1>
         </header>
-        <p className="Intro">
+        <p className="intro">
           View your plant's moisture level live!
         </p>
-        <label>Moisture</label>
+        <label className="axis">Moisture</label>
         <div className="linechart">
           <AreaChart
             className="experiment"
             style={{ '.label': { fill: 'black' } }}
             axes
             grid
+            dataPoints
             xType={'time'}
+            tickTimeDisplayFormat={'%B %d'}
             verticalGrid
             lineColors={['pink', 'cyan']}
             yDomainRange={[0, 100]}
-            width={700}
+            width={500}
             height={500}
             interpolate={'cardinal'}
             xTicks={7}
-            areaColors={['cyan']}
+            areaColors={['white']}
             data={[
               [
                 { x: '16-Jul-18', y: 80 },
@@ -88,7 +90,7 @@ class App extends Component {
               ]
             ]}
             />
-          <div>Day</div>
+          <label className="axis">Day</label>
         </div>
       </div>
     );

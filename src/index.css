@@ -1,5 +1,21 @@
-body {
+html {
+  height: 100%;
+}
+
+/* body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-position: fixed;
+  background-image: url(./many-leaves-unsplash.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+body {
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./many-leaves-unsplash.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  max-width: 100%;
 }

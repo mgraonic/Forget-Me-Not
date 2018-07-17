@@ -3,6 +3,18 @@
   display: grid;
 }
 
+.title {
+  color: white;
+}
+
+.axis {
+  color: white;
+}
+
+.intro {
+  color: white;
+}
+
 .linechart {
   display: inline-block;
   padding: 0;
@@ -55,4 +67,8 @@ g .line {
 
 .x.axis .tick:last-of-type line {
   stroke: black !important;
+}
+
+circle.data-point {
+  fill: darkorange !important;
 }
