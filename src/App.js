@@ -69,13 +69,13 @@ class App extends Component {
             axes
             grid
             dataPoints
+            verticalGrid
             xType={'time'}
             tickTimeDisplayFormat={'%B %d'}
-            verticalGrid
             lineColors={['pink', 'cyan']}
             yDomainRange={[0, 100]}
             width={500}
-            height={500}
+            height={400}
             interpolate={'cardinal'}
             xTicks={7}
             areaColors={['white']}

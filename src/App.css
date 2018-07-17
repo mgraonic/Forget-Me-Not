@@ -61,12 +61,42 @@ g .line {
   stroke: #ffffff;
 }
 
+.areaChart .area {
+  opacity: 1 !important;
+}
+
 .x.axis .tick line {
-  stroke: white !important;
+  stroke: transparent !important;
 }
 
 .x.axis .tick:last-of-type line {
   stroke: black !important;
+}
+
+.x.axis .tick:first-of-type line {
+  stroke: black !important;
+}
+
+.x.axis .tick circle.tick-circle {
+  fill: transparent;
+}
+
+.y.axis .tick line {
+  stroke: white !important;
+}
+
+.y.axis .tick:first-of-type line {
+  stroke: black !important;
+}
+
+.y.axis .tick text {
+  fill: white;
+  font-size: 15px;
+}
+
+.x.axis .tick text {
+  fill: white;
+  font-size: 10px;
 }
 
 circle.data-point {
