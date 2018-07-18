@@ -59,36 +59,35 @@ class App extends Component {
           <h1 className="title">Forget Me Not</h1>
         </header>
         <p className="intro">
-          View your plant's moisture level live!
+          Your plant's moisture level live!
         </p>
         <div className="linechart">
           <div className="moisture axis"><p>Moisture (%)</p></div>
           <div className="chart">
             <AreaChart
-              className="experiment"
-              style={{ '.label': { fill: 'white' } }}
+              style={{ '.label': { fill: 'black' } }}
               axes
               grid
               dataPoints
               verticalGrid
               noAreaGradient
-              xType={'time'}
+              xType={'text'}
               tickTimeDisplayFormat={'%B %d'}
-              lineColors={['pink', 'cyan']}
               yDomainRange={[0, 100]}
-              width={500}
+              width={400}
               height={400}
               interpolate={'cardinal'}
               xTicks={7}
-              areaColors={['white']}
+              areaColors={['38726C']}
               data={[
                 [
-                  { x: '16-Jul-18', y: 80 },
-                  { x: '17-Jul-18', y: 85 },
-                  { x: '18-Jul-18', y: 90 },
-                  { x: '19-Jul-18', y: 75 },
-                  { x: '20-Jul-18', y: 78 },
-                  { x: '21-Jul-18', y: 82 }
+                  { x: 'Mon', y: 80 },
+                  { x: 'Tues', y: 85 },
+                  { x: 'Weds', y: 90 },
+                  { x: 'Thurs', y: 75 },
+                  { x: 'Fri', y: 78 },
+                  { x: 'Sat', y: 82 },
+                  { x: 'Sun', y: 87 }
                 ]
               ]}
               />
