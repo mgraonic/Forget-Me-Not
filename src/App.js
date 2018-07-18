@@ -93,7 +93,7 @@ class App extends Component {
               ]}
               />
           </div>
-          <div className="day axis">Day</div>
+          <div className="day axis"><p>Day</p></div>
         </div>
       </div>
     );

@@ -15,3 +15,7 @@ body {
 img {
   filter: blur(20px);
 }
+
+#root {
+  justify-content: center;
+}
