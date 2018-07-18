@@ -62,7 +62,7 @@ class App extends Component {
           View your plant's moisture level live!
         </p>
         <div className="linechart">
-          <div className="moisture axis">Moisture</div>
+          <div className="moisture axis"><p>Moisture (%)</p></div>
           <div className="chart">
             <AreaChart
               className="experiment"

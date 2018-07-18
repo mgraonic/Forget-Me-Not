@@ -7,7 +7,7 @@
   grid-template-columns: 25% 75%;
   grid-template-rows: 75% 25%;
   border: solid red 1px;
-  height: 80vh;
+  height: 35em;
 }
 
 .chart {
@@ -22,6 +22,10 @@
   color: white;
 }
 
+.moisture.axis p {
+  transform: rotate(-90deg)
+}
+
 .moisture.axis {
   height: 100%;
   grid-column: 1;
@@ -29,11 +33,11 @@
   border: solid yellow 1px;
   text-orientation: sideways;
   display: flex;
-  flex-direction: column;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-orientation: sideways;
 }
 
 .title {
