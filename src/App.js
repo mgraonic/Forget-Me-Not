@@ -61,36 +61,39 @@ class App extends Component {
         <p className="intro">
           View your plant's moisture level live!
         </p>
-        <label className="axis">Moisture</label>
         <div className="linechart">
-          <AreaChart
-            className="experiment"
-            style={{ '.label': { fill: 'black' } }}
-            axes
-            grid
-            dataPoints
-            verticalGrid
-            xType={'time'}
-            tickTimeDisplayFormat={'%B %d'}
-            lineColors={['pink', 'cyan']}
-            yDomainRange={[0, 100]}
-            width={500}
-            height={400}
-            interpolate={'cardinal'}
-            xTicks={7}
-            areaColors={['white']}
-            data={[
-              [
-                { x: '16-Jul-18', y: 80 },
-                { x: '17-Jul-18', y: 85 },
-                { x: '18-Jul-18', y: 90 },
-                { x: '19-Jul-18', y: 75 },
-                { x: '20-Jul-18', y: 78 },
-                { x: '21-Jul-18', y: 82 }
-              ]
-            ]}
-            />
-          <label className="axis">Day</label>
+          <div className="moisture axis">Moisture</div>
+          <div className="chart">
+            <AreaChart
+              className="experiment"
+              style={{ '.label': { fill: 'white' } }}
+              axes
+              grid
+              dataPoints
+              verticalGrid
+              noAreaGradient
+              xType={'time'}
+              tickTimeDisplayFormat={'%B %d'}
+              lineColors={['pink', 'cyan']}
+              yDomainRange={[0, 100]}
+              width={500}
+              height={400}
+              interpolate={'cardinal'}
+              xTicks={7}
+              areaColors={['white']}
+              data={[
+                [
+                  { x: '16-Jul-18', y: 80 },
+                  { x: '17-Jul-18', y: 85 },
+                  { x: '18-Jul-18', y: 90 },
+                  { x: '19-Jul-18', y: 75 },
+                  { x: '20-Jul-18', y: 78 },
+                  { x: '21-Jul-18', y: 82 }
+                ]
+              ]}
+              />
+          </div>
+          <div className="day axis">Day</div>
         </div>
       </div>
     );
