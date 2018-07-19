@@ -21,6 +21,35 @@
   font-size: 20px;
 }
 
+/* @media screen and (min-width: 411px) {
+  .App {
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin: 0;
+    background-color: whitesmoke;
+    border-radius: 25px;
+  }
+  .linechart {
+    display: flex;
+    flex-direction: column;
+    border: solid cyan 1px;
+  }
+  .moisture.axis {
+    display: none;
+  }
+  .moisture.axis p {
+    display: none;
+  }
+  .day.axis {
+    display: none;
+  }
+  svg {
+    width: 350;
+    height: 350;
+  }
+} */
+
 .linechart {
   display: grid;
   grid-template-columns: 1fr 13fr 4fr;
@@ -51,7 +80,6 @@
 .moisture.axis p {
   margin: 0;
   transform: rotate(-90deg);
-  border: solid black 1px;
   position: relative;
   left: 50px;
   top: -40px;
@@ -119,6 +147,7 @@ g .line {
 
 .y.axis .tick line {
   stroke: black;
+  stroke-width: 0.3em;
 }
 
 .y.axis .tick:first-of-type line {
