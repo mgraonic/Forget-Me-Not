@@ -1,27 +1,4 @@
-.App {
-  text-align: center;
-  width: 650px;
-  height: 630px;
-  margin: 10% auto 0 auto;
-  background-color: whitesmoke;
-  border-radius: 25px;
-  /* justify-self: center; */
-}
-
-.title {
-  padding-top: 30px;
-  font-family: Courier New;
-  font-size: 40px;
-}
-
-.intro {
-  color: black;
-  /* padding-left: 120px; */
-  font-family: Courier New;
-  font-size: 20px;
-}
-
-/* @media screen and (min-width: 411px) {
+@media screen and (min-width: 450px) {
   .App {
     text-align: center;
     width: auto;
@@ -30,142 +7,138 @@
     background-color: whitesmoke;
     border-radius: 25px;
   }
+  .title {
+    padding-top: 30px;
+    font-family: Courier New;
+    font-size: 40px;
+  }
+  .intro {
+    color: black;
+    /* padding-left: 120px; */
+    font-family: Courier New;
+    font-size: 20px;
+  }
   .linechart {
     display: flex;
     flex-direction: column;
-    border: solid cyan 1px;
   }
-  .moisture.axis {
-    display: none;
+  .chart {}
+}
+
+@media screen and (max-width: 2000px) {
+  .App {
+    text-align: center;
+    width: 650px;
+    height: 630px;
+    margin: 10% auto 0 auto;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    /* justify-self: center; */
   }
-  .moisture.axis p {
-    display: none;
+  .title {
+    padding-top: 30px;
+    font-family: Courier New;
+    font-size: 40px;
+  }
+  .intro {
+    color: black;
+    /* padding-left: 120px; */
+    font-family: Courier New;
+    font-size: 20px;
+  }
+  .linechart {
+    display: grid;
+    grid-template-columns: 1fr 13fr 4fr;
+    grid-template-rows: 7fr 1fr;
+  }
+  .chart {
+    grid-column: 2;
+    grid-row: 1 / 2;
   }
   .day.axis {
-    display: none;
+    grid-row: 2;
+    grid-column: 2;
+    color: black;
+    font-family: Courier New;
+    font-size: 20px;
+  }
+  .day.axis p {
+    position: relative;
+    bottom: 60px;
+    right: -10px;
+  }
+  .moisture.axis p {
+    margin: 0;
+    transform: rotate(-90deg);
+    position: relative;
+    left: 50px;
+    top: -40px;
+  }
+  .moisture.axis {
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    color: black;
+    font-family: Courier New;
+    font-size: 20px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .title {
+    color: black;
   }
   svg {
-    width: 350;
-    height: 350;
+    padding: 0.5em;
+    max-width: 100%;
   }
-} */
-
-.linechart {
-  display: grid;
-  grid-template-columns: 1fr 13fr 4fr;
-  grid-template-rows: 7fr 1fr;
-  border: solid cyan 1px;
-}
-
-.chart {
-  grid-column: 2;
-  grid-row: 1 / 2;
-  border: solid pink 1px;
-}
-
-.day.axis {
-  grid-row: 2;
-  grid-column: 2;
-  color: black;
-  font-family: Courier New;
-  font-size: 20px;
-  border: solid yellow 1px;
-}
-
-.day.axis p {
-  position: relative;
-  top: -75px;
-}
-
-.moisture.axis p {
-  margin: 0;
-  transform: rotate(-90deg);
-  position: relative;
-  left: 50px;
-  top: -40px;
-}
-
-.moisture.axis {
-  height: 100%;
-  grid-column: 1;
-  grid-row: 1;
-  display: flex;
-  color: black;
-  font-family: Courier New;
-  font-size: 20px;
-  flex-direction: column;
-  justify-content: center;
-  border: solid red 1px;
-}
-
-.title {
-  color: black;
-}
-
-svg {
-  padding: 0.5em;
-  max-width: 100%;
-}
-
-g .line {
-  stroke: #ffffff;
-}
-
-.areaChart .area {
-  opacity: 0.5 !important;
-}
-
-.areaChart {
-  background-color: black;
-}
-
-.x.axis .tick line {
-  stroke: transparent !important;
-}
-
-.x.axis:nth-child(8) line {
-  stroke: crimson !important;
-}
-
-.x.axis .tick:last-of-type line {
-  stroke: black !important;
-}
-
-.x.axis .tick:first-of-type line {
-  stroke: black !important;
-}
-
-.x.axis .tick circle.tick-circle {
-  fill: transparent;
-}
-
-.x.axis .tick text {
-  font-family: Courier New;
-  fill: black;
-  font-size: 12px;
-}
-
-.y.axis .tick line {
-  stroke: black;
-  stroke-width: 0.3em;
-}
-
-.y.axis .tick:first-of-type line {
-  stroke: black !important;
-}
-
-.y.axis .tick text {
-  font-family: Courier New;
-  fill: black;
-  font-size: 12px;
-}
-
-.y.axis .tick:nth-of-type(8) line {
-  stroke: #ef1919 !important;
-  z-index: 999;
-  stroke-width: 0.3em;
-}
-
-circle.data-point {
-  fill: darkorange !important;
+  g .line {
+    stroke: #ffffff;
+  }
+  .areaChart .area {
+    opacity: 0.5 !important;
+  }
+  .areaChart {
+    background-color: black;
+  }
+  .x.axis .tick line {
+    stroke: transparent !important;
+  }
+  .x.axis:nth-child(8) line {
+    stroke: crimson !important;
+  }
+  .x.axis .tick:last-of-type line {
+    stroke: black !important;
+  }
+  .x.axis .tick:first-of-type line {
+    stroke: black !important;
+  }
+  .x.axis .tick circle.tick-circle {
+    fill: transparent;
+  }
+  .x.axis .tick text {
+    font-family: Courier New;
+    fill: black;
+    font-size: 12px;
+  }
+  .y.axis .tick line {
+    stroke: black;
+    stroke-width: 0.3em;
+  }
+  .y.axis .tick:first-of-type line {
+    stroke: black !important;
+  }
+  .y.axis .tick text {
+    font-family: Courier New;
+    fill: black;
+    font-size: 12px;
+  }
+  .y.axis .tick:nth-of-type(8) line {
+    stroke: #ef1919 !important;
+    z-index: 999;
+    stroke-width: 0.3em;
+  }
+  circle.data-point {
+    fill: darkorange !important;
+  }
 }

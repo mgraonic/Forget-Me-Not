@@ -1,21 +1,29 @@
-html {
-  height: 100%;
+@media screen and (max-width: 450px) {
+  body {
+    background: linear-gradient( rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.3)), url('./many-leaves-unsplash2.png');
+    background-size: contain;
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
-body {
-  background: linear-gradient( rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.3)), url('./many-leaves-unsplash2.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
-  max-width: 100%;
-}
-
-img {
-  filter: blur(20px);
-}
-
-#root {
-  justify-content: center;
+@media screen and (max-width: 2000px) {
+  html {
+    height: 100%;
+  }
+  body {
+    background: linear-gradient( rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.3)), url('./many-leaves-unsplash2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    max-width: 100%;
+  }
+  img {
+    filter: blur(20px);
+  }
+  #root {
+    justify-content: center;
+  }
 }

@@ -25,7 +25,7 @@ class App extends Component {
 
       for (let item in readings) {
         let t = readings[item].utc_time;
-        let newt = moment(t, 'YYYY-MM-DD HH:mm:ssZZ').format('DD-MMM-YY')
+        let newt = moment(t, 'YYYY-MM-DD HH:mm:ssZZ').format('dddd');
         newReadings.push({
           utcTime: newt,
           moisture: readings[item].moisture
@@ -38,20 +38,16 @@ class App extends Component {
       });
 
       let recent = this.state.lastReading.utcTime;
-      console.log(moment(recent, 'YYYY-MM-DD HH:mm:ssZZ').tz('America/Los_Angeles').format('ha z'));
-      console.log(moment(recent, 'YYYY-MM-DD HH:mm:ssZZ').format('DD-MMM-YY'));
-
       console.log(this.state);
     });
   }
-  // DATES
-
-  // DATA CONSTRUCTION
 
   render() {
-    const d = this.state.allReadings.map((reading) => {
+    const all = this.state.allReadings.map((reading) => {
       return {x: reading.utcTime, y: reading.moisture}
     })
+
+    let data = [all.slice(-5)];
 
     return (
       <div className="App">
@@ -79,20 +75,10 @@ class App extends Component {
               interpolate={'cardinal'}
               xTicks={7}
               areaColors={['38726C']}
-              data={[
-                [
-                  { x: 'Mon', y: 80 },
-                  { x: 'Tues', y: 85 },
-                  { x: 'Weds', y: 90 },
-                  { x: 'Thurs', y: 75 },
-                  { x: 'Fri', y: 78 },
-                  { x: 'Sat', y: 82 },
-                  { x: 'Sun', y: 87 }
-                ]
-              ]}
+              data={data}
               />
           </div>
-          <div className="day axis"><p>Day</p></div>
+          <div className="day axis"><p>Day of the Week</p></div>
         </div>
       </div>
     );
