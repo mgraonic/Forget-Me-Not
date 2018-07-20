@@ -1,18 +1,21 @@
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 959px) {
   body {
-    background: linear-gradient( rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.3)), url('./many-leaves-unsplash2.png');
-    background-size: contain;
-    height: 100%;
-    overflow: hidden;
+    background: url('./many-leaves-unsplash2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 2000px) {
+@media screen and (min-width: 1000px) {
   html {
     height: 100%;
   }
   body {
-    background: linear-gradient( rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.3)), url('./many-leaves-unsplash2.png');
+    background: url('./many-leaves-unsplash2.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

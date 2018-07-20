@@ -25,7 +25,7 @@ class App extends Component {
 
       for (let item in readings) {
         let t = readings[item].utc_time;
-        let newt = moment(t, 'YYYY-MM-DD HH:mm:ssZZ').format('dddd');
+        let newt = moment(t, 'YYYY-MM-DD HH:mm:ssZZ').format('ddd');
         newReadings.push({
           utcTime: newt,
           moisture: readings[item].moisture
@@ -48,6 +48,7 @@ class App extends Component {
     })
 
     let data = [all.slice(-5)];
+    console.log(data);
 
     return (
       <div className="App">

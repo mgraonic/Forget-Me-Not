@@ -1,4 +1,6 @@
-@media screen and (min-width: 450px) {
+/**** MOBILE ****/
+
+@media screen and (max-width: 959px) {
   .App {
     text-align: center;
     width: auto;
@@ -22,10 +24,70 @@
     display: flex;
     flex-direction: column;
   }
-  .chart {}
+  .moisture.axis {
+    display: none;
+  }
+  .day.axis {
+    display: none;
+  }
+  svg {
+    padding: 0.5em;
+    max-width: 100%;
+  }
+  g .line {
+    stroke: #ffffff;
+  }
+  .areaChart .area {
+    opacity: 0.5 !important;
+  }
+  .areaChart {
+    background-color: black;
+  }
+  .x.axis .tick line {
+    stroke: transparent !important;
+  }
+  .x.axis:nth-child(9) line {
+    stroke: crimson !important;
+  }
+  .x.axis .tick:last-of-type line {
+    stroke: black !important;
+  }
+  .x.axis .tick:first-of-type line {
+    stroke: black !important;
+  }
+  .x.axis .tick circle.tick-circle {
+    fill: transparent;
+  }
+  .x.axis .tick text {
+    font-family: Courier New;
+    fill: black;
+    font-size: 12px;
+  }
+  .y.axis .tick line {
+    stroke: black;
+    stroke-width: 0.3em;
+  }
+  .y.axis .tick:first-of-type line {
+    stroke: black !important;
+  }
+  .y.axis .tick text {
+    font-family: Courier New;
+    fill: black;
+    font-size: 12px;
+  }
+  .y.axis .tick:nth-of-type(9) line {
+    stroke: #ef1919 !important;
+    z-index: 999;
+    stroke-width: 0.3em;
+  }
+  circle.data-point {
+    fill: darkorange !important;
+  }
 }
 
-@media screen and (max-width: 2000px) {
+/**** DESKTOP ****/
+
+@media screen and (min-width: 1000px) {
   .App {
     text-align: center;
     width: 650px;
@@ -104,7 +166,7 @@
   .x.axis .tick line {
     stroke: transparent !important;
   }
-  .x.axis:nth-child(8) line {
+  .x.axis:nth-child(9) line {
     stroke: crimson !important;
   }
   .x.axis .tick:last-of-type line {
@@ -133,7 +195,7 @@
     fill: black;
     font-size: 12px;
   }
-  .y.axis .tick:nth-of-type(8) line {
+  .y.axis .tick:nth-of-type(9) line {
     stroke: #ef1919 !important;
     z-index: 999;
     stroke-width: 0.3em;
