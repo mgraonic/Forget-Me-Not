@@ -56,7 +56,7 @@ class App extends Component {
           <h1 className="title">Forget Me Not</h1>
         </header>
         <p className="intro">
-          Your plant's moisture level live!
+          Waffle's moisture levels live!
         </p>
         <div className="linechart">
           <div className="moisture axis"><p>Moisture (%)</p></div>
