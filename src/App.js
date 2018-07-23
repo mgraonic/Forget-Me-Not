@@ -47,7 +47,7 @@ class App extends Component {
       return {x: reading.utcTime, y: reading.moisture}
     })
 
-    let data = [all.slice(-5)];
+    let data = [all.slice(-7)];
     console.log(data);
 
     return (
