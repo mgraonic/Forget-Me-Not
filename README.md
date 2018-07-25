@@ -5,6 +5,8 @@ Forget Me Not is a simple Raspberry Pi-based system you can use to monitor your 
 
 The Raspberry Pi (RPi) receives analog voltage readings from a resistive sensor placed in the plant's soil. The RPi only has digital input pins, so those analog readings are converted to a digital signal using an analog-to-digital converter (ADC). The RPi (already connected to the internet) then leverages a Python script to log the realtime readings in Firebase. If the reading is at or below a designated threshold, a text is sent to your phone via the Twilio API. The frontend reads the data stored in Firebase and displays it as an svg-powered graph, which you can access online with your favorite web browser.
 
+![screenshot](https://github.com/mgraonic/Forget-Me-Not/blob/master/screenshot.png)
+
 # Setup and Installation
 
 ### Raspberry Pi Configuration
