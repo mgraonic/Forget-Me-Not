@@ -1,5 +1,6 @@
 # Forget Me Not
 Forget Me Not is a simple Raspberry Pi-based system you can use to monitor your plant's soil moisture. Realtime moisture readings are displayed online in an easy-to-read graph. If the moisture drops below your chosen threshold, Forget Me Not sends you a text.  
+
 ![screenshot](https://github.com/mgraonic/Forget-Me-Not/blob/master/screenshot.png)
 
 # How It Works
@@ -20,7 +21,7 @@ Connect your RPi to a monitor, mouse, and keyboard for the [initial setup](https
 6. Install [Adafruit ADC library](https://github.com/adafruit/Adafruit_Python_ADS1X15)
 7. Sign up for a free [Twilio](https://www.twilio.com/try-twilio) account.
 8. Install [Twilio](https://www.twilio.com/docs/libraries/python)
-9. Clone the [FMN-sensor repo](https://github.com/mgraonic/FMN-Sensor) on the RPi
+9. Clone the [FMN-sensor repo](https://github.com/mgraonic/Sensor-Forget-Me-Not) on the RPi
 10. Make a commit so git ignores the correct files
 11. Create a file called config.py in your local FMN-sensor repo
 
@@ -94,4 +95,4 @@ export default firebase;
 [Jumper Wires](http://a.co/8uqPOi3)  
 [Raspberry Pi Cobbler Plus](https://www.adafruit.com/product/2029)
 
-### Assembly 
+### Assembly
