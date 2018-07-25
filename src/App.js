@@ -14,9 +14,7 @@ class App extends Component {
       allReadings: []
     }
   }
-  // FIREBASE LISTENER
-  // grabs snapshot of firebase DB on load
-  // pulls levels out and sets state
+
   componentDidMount() {
     const levelsRef = firebase.database().ref('levels');
     levelsRef.on('value', (snapshot) => {

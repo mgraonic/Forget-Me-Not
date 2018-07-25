@@ -1,6 +1,6 @@
 @media screen and (max-width: 959px) {
   body {
-    background: url('./many-leaves-unsplash2.png');
+    background: url('./leaves.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,7 +15,7 @@
     height: 100%;
   }
   body {
-    background: url('./many-leaves-unsplash2.png');
+    background: url('./leaves.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
