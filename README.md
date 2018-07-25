@@ -1,5 +1,5 @@
 # Forget Me Not
-Forget Me Not is a simple Raspberry Pi-based system you can use to monitor your plant's soil moisture. Realtime moisture readings are displayed online in an easy-to-read graph. If the moisture drops below your chosen threshold, Forget Me Not sends you a text.  
+Forget Me Not is a simple Node.js and Raspberry Pi-based system you can use to monitor your plant's soil moisture. Realtime moisture readings are displayed online in an easy-to-read graph. If the moisture drops below your chosen threshold, Forget Me Not sends you a text.  
 
 ![screenshot](https://github.com/mgraonic/Forget-Me-Not/blob/master/screenshot.png)
 
@@ -8,7 +8,9 @@ Forget Me Not is a simple Raspberry Pi-based system you can use to monitor your 
 The Raspberry Pi (RPi) receives analog voltage readings from a resistive sensor placed in the plant's soil. The RPi only has digital input pins, so those analog readings are converted to a digital signal using an analog-to-digital converter (ADC). The RPi (already connected to the internet) then leverages a Python script to log the realtime readings in Firebase. If the reading is at or below a designated threshold, a text is sent to your phone via the Twilio API. The frontend reads the data stored in Firebase and displays it as an svg-powered graph, which you can access online with your favorite web browser.
 
 
-# Setup and Installation
+# Setup and Installation  
+
+These instructions assume that you are familiar with setting up a Node.js project
 
 ### Raspberry Pi Configuration
 
@@ -27,6 +29,8 @@ Connect your RPi to a monitor, mouse, and keyboard for the [initial setup](https
 
 Add the code below to config.py :  
 ```py
+# Set the configuration for your app
+# Replace credentials with your project's config hash
 twilio_sid = '<YOUR TWILIO SID>'
 twilio_token = '<YOUR TWILIO TOKEN>'
 
@@ -59,6 +63,7 @@ Click on the "Rules" tab and disable security using the following code:
 4. Clone the [Forget Me Not](https://github.com/mgraonic/Forget-Me-Not) repo on your computer
 5. Make a commit so git ignores the correct files
 6. Create a file called firebase.js in your local Forget Me Not repo
+7. Start up node
 
 Add the code below to firebase.js :
 
@@ -66,7 +71,7 @@ Add the code below to firebase.js :
 import firebase from 'firebase';
 
 // Set the configuration for your app
-// TODO: Replace with your project's config object
+// Replace with your project's config object
 let config = {
   apiKey: "<API_KEY>",
     authDomain: "<PROJECT_ID>.firebaseapp.com",
@@ -91,8 +96,14 @@ export default firebase;
 
 [Resistive moisture sensor](https://www.sparkfun.com/products/13637)  
 [ADS1015 12-Bit ADC](https://www.adafruit.com/product/1083)  
-[Raspberry Pi 3 Model B](https://www.adafruit.com/product/3055) or any other Wifi-enabled Pi  
+[Raspberry Pi 3 Model B](https://www.adafruit.com/product/3055) or any other Wifi-enabled Pi
 [Jumper Wires](http://a.co/8uqPOi3)  
 [Raspberry Pi Cobbler Plus](https://www.adafruit.com/product/2029)
 
 ### Assembly
+
+1. Connect the RPi to the Cobbler using the ribbon cable and then plug the Cobbler into the breadboard
+2. Using the jumper wires, connect the pin marked VCC on the sensor to the 3V3 pin on the breadboard
+3. Connect the GND pin on the sensor to a GND pin on the breadboard
+4. Connect the SIG pin (analog signal) on the sensor to the A0 pin on the ADC
+4. Wire up the ADC by connecting the VDD pin to 3V3 on the breadboard, GND pin to GND on the breadboard, SCA pin to SCA on the breadboard, and SCL pin to SCL on the breadboard
