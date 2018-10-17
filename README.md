@@ -1,5 +1,5 @@
 # Forget Me Not
-Forget Me Not is a simple Node.js and Raspberry Pi-based system you can use to monitor your plant's soil moisture. Realtime moisture readings are displayed online in an easy-to-read graph. If the moisture drops below your chosen threshold, Forget Me Not sends you a text.  
+Forget Me Not is a simple Raspberry Pi-based system you can use to monitor your plant's soil moisture. Realtime moisture readings are displayed online in an easy-to-read graph. If the moisture drops below your chosen threshold, Forget Me Not sends you a text.  
 
 ![screenshot](https://github.com/mgraonic/Forget-Me-Not/blob/master/screenshot.png)
 
