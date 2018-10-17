@@ -96,7 +96,7 @@ export default firebase;
 
 [Resistive moisture sensor](https://www.sparkfun.com/products/13637)  
 [ADS1015 12-Bit ADC](https://www.adafruit.com/product/1083)  
-[Raspberry Pi 3 Model B](https://www.adafruit.com/product/3055) or any other Wifi-enabled Pi
+[Raspberry Pi 3 Model B](https://www.adafruit.com/product/3055) or any other Wifi-enabled Pi  
 [Jumper Wires](http://a.co/8uqPOi3)  
 [Raspberry Pi Cobbler Plus](https://www.adafruit.com/product/2029)
 
